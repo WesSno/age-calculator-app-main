@@ -69,7 +69,7 @@ function animation(element, start, end, duration) {
   let current = start;
 
   // Determine whether to increment or decrement the value
-  const increment = end > start ? 1 : -1;
+  const increment = end > start ? 1 : 0;
 
   // Calculate the time interval for each step
   const stepTime = Math.abs(Math.floor(duration / range));
@@ -129,11 +129,11 @@ function calculateAge(birthYear, birthMonth, birthDay) {
   }
 
   if (birthYear === currentYear) {
-    document.querySelector(".year-birth").textContent = 0;
+    animation(document.querySelector(".year-birth"), 0, 0, 1000);
     if (birthMonth >= currentMonth) {
-      document.querySelector(".birth-month").textContent = 0;
-      if (birthDay === currentDay) {
-        document.querySelector(".birth-day").textContent = 0;
+      animation(document.querySelector(".birth-month"), 0, 0, 1000);
+      if (birthDay >= currentDay) {
+        animation(document.querySelector(".birth-day"), 0, 0, 1000);
       } else {
         animation(document.querySelector(".birth-day"), 0, ageDays, 1000);
       }
@@ -143,6 +143,8 @@ function calculateAge(birthYear, birthMonth, birthDay) {
     }
   } else {
     animation(document.querySelector(".year-birth"), 0, ageYears, 1000);
+    animation(document.querySelector(".birth-month"), 0, ageMonths, 1000);
+    animation(document.querySelector(".birth-day"), 0, ageDays, 1000);
   }
 }
 
