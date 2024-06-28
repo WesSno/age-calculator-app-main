@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /************ PRIMARY *************/
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+
+  /************ NEUTRAL ****************/
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 1rem;
+}
+
+.age-card {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  border-radius: 30px 30px 100px 30px;
+  width: 100%;
+  max-width: 750px;
+}
+
+.birthday-details {
+  display: flex;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--smokey-grey);
+}
+
+form input {
+  font-weight: 700;
+  margin: 0.2rem 0 0.3rem 0;
+  padding: 1.5rem 0.8rem;
+  width: 100%;
+  max-width: 170px;
+  border: 1px solid var(--light-grey);
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+form input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--smokey-grey);
+  font-size: 1.2rem;
+}
+
+form input:focus {
+  border: 1px solid var(--purple);
+  outline: none;
+}
+
+.error-message {
+  align-self: center;
+  margin: 0 auto;
+  font-size: clamp(0.5rem 20vw 1rem);
+  font-style: italic;
+  font-weight: 400;
+  display: none;
+  color: lightcoral;
+}
+
+.button-and-line {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 2rem 0;
+}
+
+.line-1,
+.line-2 {
+  height: 1px;
+  width: 40%;
+  background-color: var(--light-grey);
+}
+
+button {
+  background-image: url("../assets/images/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  background-color: var(--purple);
+  border: none;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button.hover-effect:hover {
+  color: var(--purple);
+  background-color: black;
+}
+
+.results p {
+  font-size: clamp(2rem, 10vw, 5rem);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--off-black);
+}
+
+.results span {
+  color: var(--purple);
+}
+
+@media (min-width: 900px) {
+  .line-2 {
+    display: none;
+  }
+  .line-1 {
+    width: 87%;
+  }
+}
